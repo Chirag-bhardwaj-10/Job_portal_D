@@ -26,7 +26,7 @@ const HeroSection = () => {
                     <h1 className='text-5xl font-bold'>Search, Apply & <br /> Get Your <span className='text-[#6A38C2]'>Dream Jobs</span></h1>
                 </div>
                 <div>
-                    <p className='text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus adipisci cupiditate cum.<br /> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p className='text-gray-500'>Unlock endless career opportunities, connect instantly, and land the job you deserve!</p>
                 </div>
                 <div className='flex w-[40%] shadow-lg border pl-3 border-gray-200 rounded-full items-center gap-4 mx-auto'>
                     <input
@@ -38,7 +38,7 @@ const HeroSection = () => {
                         className="outline-none border-none w-full"
                     />
                     <Button onClick={searchJobHandler} className='rounded-r-full bg-[#6A38C2]'>
-                        <Search className='h-5 w-5' />
+                        <Search className='h-6 w-5.5' />
                     </Button>
                 </div>
             </div>

@@ -20,6 +20,8 @@ const category = [
     "Graphic Designer",
     "UI Developer",
     "Wordpress Developer",
+    "Finance & Accounting",
+    "Marketing Management"
 ]
 
 export function CategoryCarousel() {

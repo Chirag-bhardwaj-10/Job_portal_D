@@ -71,97 +71,91 @@ const Singup = () => {
   return (
     <>
       <Navbar />
-      <div className='flex items-center justify-center max-w-7xl mx-auto'>
-        <form onSubmit={submitHandler} className='w-1/2 border border-gray-200 rounded-md p-4 my-10'>
-          <h1 className='font-bold text-xl mb-4'>Sign Up</h1>
-          <div className='my-2'>
-            <Label>Full Name</Label>
-            <Input
-              type="text"
-              value={input.fullname}
-              name="fullname"
-              onChange={changeEventHandler}
-              placeholder="patel"
-            />
-          </div>
-          <div className='my-2'>
-            <Label>Email</Label>
-            <Input
-              type="email"
-              value={input.email}
-              name="email"
-              onChange={changeEventHandler}
-              placeholder="patel@gmail.com"
-            />
-          </div>
-          <div className='my-2'>
-            <Label>Phone Number</Label>
-            <Input
-              type="text"
-              value={input.phoneNumber}
-              name="phoneNumber"
-              onChange={changeEventHandler}
-              placeholder="+918080808080"
-            />
-          </div>
-          <div className='my-2'>
-            <Label>Password</Label>
-            <Input
-              type="password"
-              value={input.password}
-              name="password"
-              onChange={changeEventHandler}
-              placeholder="password"
-            />
-          </div>
-          <div className='flex items-center justify-between'>
-            <RadioGroup className="flex items-center gap-4 my-5">
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="student"
-                  checked={input.role === 'student'}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="r1">Students</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="recruiter"
-                  checked={input.role === 'recruiter'}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="r2">Recruiter</Label>
-              </div>
-            </RadioGroup>
-            <div className='flex items-center gap-2'>
-              <Label>Profile</Label>
-              <Input
-                accept="image/*"
-                type="file"
-                onChange={changeFileHandler}
-                className="cursor-pointer"
-              />
+            <div className='flex items-center justify-center max-w-6xl mx-auto'>
+                <form onSubmit={submitHandler} className='w-1/2 border border-gray-200 rounded-3xl p-4 my-10'>
+                    <h1 className='font-bold text-2xl mb-5'>Sign Up</h1>
+                    <a className='font-bold text-semibold mb-5'>Create a new Acount</a>
+                    <div className='my-2 '>
+                        
+                        <Input
+                            type="text"
+                            value={input.fullname}
+                            name="fullname"
+                            onChange={changeEventHandler}
+                            placeholder="User Name"
+                        />
+                    </div>
+                    <div className='my-2'>
+                       
+                        <Input
+                            type="email"
+                            value={input.email}
+                            name="email"
+                            onChange={changeEventHandler}
+                            placeholder="Email Address"
+                        />
+                    </div>
+                    <div className='my-2'>
+                        
+                        <Input
+                            type="text"
+                            value={input.phoneNumber}
+                            name="phoneNumber"
+                            onChange={changeEventHandler}
+                            placeholder="Contact No."
+                        />
+                    </div>
+                    <div className='my-2'>
+                        
+                        <Input
+                            type="password"
+                            value={input.password}
+                            name="password"
+                            onChange={changeEventHandler}
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className='flex items-center justify-between'>
+                        <RadioGroup className="flex items-center gap-4 my-5">
+                            <div className="flex items-center space-x-2">
+                                <Input
+                                    type="radio"
+                                    name="role"
+                                    value="student"
+                                    checked={input.role === 'student'}
+                                    onChange={changeEventHandler}
+                                    className="cursor-pointer"
+                                />
+                                <Label htmlFor="r1">Student</Label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <Input
+                                    type="radio"
+                                    name="role"
+                                    value="recruiter"
+                                    checked={input.role === 'recruiter'}
+                                    onChange={changeEventHandler}
+                                    className="cursor-pointer"
+                                />
+                                <Label htmlFor="r2">Recruiter</Label>
+                            </div>
+                        </RadioGroup>
+                        <div className='flex items-center gap-2'>
+                            <Label>Profile</Label>
+                            <Input
+                                accept="image/*"
+                                type="file"
+                                onChange={changeFileHandler}
+                                className="cursor-pointer"
+                            />
+                        </div>
+                    </div>
+                    {
+                        loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Signup</Button>
+                    }
+                    <span className='text-sm'>Already have an account? <Link to="/login" className='text-blue-600'>Login</Link></span>
+                </form>
             </div>
-          </div>
-          {
-            loading ? (
-              <Button className='w-full my-4'>
-                <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                Please wait
-              </Button>
-            ) : (
-              <Button type='submit' className='w-full my-4'>Sign Up</Button>
-            )
-          }
-          <span className='text-sm'>Already have an account? <Link to={"/login"} className='text-blue-500 cursor-pointer underline'>Login</Link></span>
-        </form>
-      </div>
     </>
   )
 }
