@@ -90,7 +90,10 @@ export const updateProfile = async (req, res) => {
         const file = req.file;
 
         const fileUri = getDataUri(file);
-        const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+        // const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+        const cloudResponse = await cloudinary.uploader.upload(fileUri.content, {
+            resource_type: "raw", // This specifies that it's a non-image file
+        });
 
         if (!fullname || !email || !phoneNumber || !bio || !skills) {
             return res.status(400).json({ message: "All fields are required", success: false });
