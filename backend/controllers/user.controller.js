@@ -91,7 +91,7 @@ export const updateProfile = async (req, res) => {
 
         const fileUri = getDataUri(file);
         // const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-        const cloudResponse = await cloudinary.uploader.upload(fileUri.content, {
+        const cloudResponse = await cloudinary.uploader.upload(fileUri.pdf, {
             resource_type: "raw", // This specifies that it's a non-image file
         });
 
